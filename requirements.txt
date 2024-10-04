@@ -2,3 +2,6 @@ streamlit
 pandas
 tensorflow
 joblib
+datetime
+numpy
+plotly

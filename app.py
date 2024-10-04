@@ -233,4 +233,4 @@ elif selected_option == "2 - Documentation":
 
         # Display the output image
         image_path = f"images/output_{i}.png"
-        st.image(image_path, caption=f"Output {i}", use_column_width=True)
+        st.image(image_path, caption=f"Output {i}", use_column_width=True) 

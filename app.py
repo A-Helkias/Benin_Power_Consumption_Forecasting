@@ -229,7 +229,7 @@ elif selected_option == "2 - Documentation":
     for i in range(1, 19):
         # Section title and description input
         st.markdown(f"### Titre de la cellule {i}")
-        description = st.text_area("Description de la cellule à compléter après validation...")
+        description = st.text_area(f"Description de la cellule {i} à compléter après validation...")
 
         # Display the output image
         image_path = f"images/output_{i}.png"

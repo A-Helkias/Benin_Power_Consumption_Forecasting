@@ -6,9 +6,6 @@ import datetime
 import numpy as np
 import plotly.graph_objects as go
 
-
-
-
 # Load the images from the specified paths
 left_image_path = "left.png"
 right_image_path = "right.png"
@@ -59,15 +56,6 @@ if selected_option == "1 - Electricity Consumption Forecasting":
         date_range = pd.date_range(start=start_date, end=end_date, freq='H')
         date_df = pd.DataFrame({"Date": date_range, "Power": 0})
         try:
-            historical_data = pd.read_csv("data/cleaned_data.csv", parse_dates=['Date'])
-            scaler = joblib.load('scaler.pkl')
-            look_back = 24
-            last_known_data = historical_data[['Power']].values[-look_back:]  
-            last_known_data_scaled = scaler.transform(last_known_data)
-
-            # Load the LSTM model (we're importing pre-made predictions now instead)
-            model = load_model('modele_lstm.h5')
-
             # Import des prédictions déjà réalisées
             result_date_range = pd.date_range(start=start_date, end=end_date, freq="H")
             pred_data_2024 = pd.read_csv("data/pred_data_2024.csv", parse_dates=['Date'])

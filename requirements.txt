@@ -6,3 +6,5 @@ datetime
 numpy
 plotly
 scikit-learn
+fpdf
+base64

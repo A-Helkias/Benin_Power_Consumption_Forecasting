@@ -5,4 +5,4 @@ joblib
 datetime
 numpy
 plotly
-sklearn
+scikit-learn

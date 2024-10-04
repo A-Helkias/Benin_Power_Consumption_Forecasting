@@ -69,7 +69,7 @@ if selected_option == "1 - Electricity Consumption Forecasting":
             model = load_model('modele_lstm.h5')
 
             # Import des prédictions déjà réalisées
-            result_date_range = pd.date_range(start=start_date, end=end_date, freq="H", closed='left')
+            result_date_range = pd.date_range(start=start_date, end=end_date, freq="H")
             pred_data_2024 = pd.read_csv("data/pred_data_2024.csv", parse_dates=['Date'])
             date_df = pred_data_2024[pred_data_2024['Date'].isin(result_date_range)]
 

@@ -5,8 +5,7 @@ import pandas as pd
 import datetime
 import numpy as np
 import plotly.graph_objects as go
-from fpdf import FPDF
-import base64
+
 # Load the images from the specified paths
 left_image_path = "left.png"
 right_image_path = "right.png"

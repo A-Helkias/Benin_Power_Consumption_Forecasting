@@ -224,13 +224,12 @@ if selected_option == "1 - Electricity Consumption Forecasting":
             st.write(f"Une erreur s'est produite : {e}")
             
 elif selected_option == "2 - Documentation":
-    st.subheader("Model Reliability Outputs")
     
     # Loop through the 18 outputs
     for i in range(1, 19):
         # Section title and description input
-        st.markdown(f"### Output {i}")
-        description = st.text_area(f"Description for Output {i}", f"Write something about Output {i}...")
+        st.markdown(f"### Titre de la cellule {i}")
+        description = st.text_area("Description de la cellule ", f"A compléter après validation...")
 
         # Display the output image
         image_path = f"images/output_{i}.png"

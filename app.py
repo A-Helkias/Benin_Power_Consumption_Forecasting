@@ -56,7 +56,7 @@ if selected_option == "1 - Electricity Consumption Forecasting":
 
     if st.button('Effectuer la prévision'):
         # Générer DataFrame pour la plage de dates
-        date_range = pd.date_range(start=start_date, end=end_date, freq='H', closed='left')
+        date_range = pd.date_range(start=start_date, end=end_date, freq='H')
         date_df = pd.DataFrame({"Date": date_range, "Power": 0})
         try:
             historical_data = pd.read_csv("data/cleaned_data.csv", parse_dates=['Date'])

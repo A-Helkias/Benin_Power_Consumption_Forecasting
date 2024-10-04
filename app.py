@@ -5,7 +5,8 @@ import pandas as pd
 import datetime
 import numpy as np
 import plotly.graph_objects as go
-
+from fpdf import FPDF
+import base64
 # Load the images from the specified paths
 left_image_path = "left.png"
 right_image_path = "right.png"
@@ -222,3 +223,22 @@ if selected_option == "1 - Electricity Consumption Forecasting":
 
         except Exception as e:
             st.write(f"Une erreur s'est produite : {e}")
+elif selected_option == "2 - Documentation":
+    st.subheader("Documentation")
+    st.write("Below is the full documentation for the energy consumption forecasting model.")
+
+    # Load PDF file
+    with open("methodology-final_3.pdf", "rb") as pdf_file:
+        pdf_data = pdf_file.read()
+
+        # Display download button
+        st.download_button(
+            label="Download Documentation (PDF)",
+            data=pdf_data,
+            file_name="methodology-final_3.pdf",
+            mime="application/pdf"
+        )
+        
+        # Display PDF within the app (using iframe)
+        st.markdown(f'<iframe src="data:application/pdf;base64,{pdf_data.decode("latin-1")}" width="700" height="1000" type="application/pdf"></iframe>', unsafe_allow_html=True)
+
